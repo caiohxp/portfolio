@@ -1,0 +1,282 @@
+/*================================================
+  1. ESTILOS GERAIS E VARIÁVEIS
+================================================*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+@import url('estilo/contato.css');
+
+:root {
+    --bg-dark: #121212;
+    --bg-light: #1E1E1E;
+    --primary-color: #6A5ACD; /* SlateBlue */
+    --secondary-color: #FFD700; /* Gold */
+    --text-light: #FFFFFF;
+    --text-dark: #B0B0B0;
+    --font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+p {
+    line-height: 1.7;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+.bg-light {
+    background-color: var(--bg-light) !important;
+}
+
+.section-title {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.section-title span {
+    color: var(--primary-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+.btn-main {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-main:hover {
+    background-color: var(--secondary-color);
+    color: var(--bg-dark);
+    transform: translateY(-3px);
+}
+
+/*================================================
+  2. HEADER / NAVBAR
+================================================*/
+.navbar {
+    background: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    transition: background 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: var(--bg-dark);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.navbar-brand span {
+    color: var(--primary-color);
+}
+
+.nav-link {
+    font-weight: 600;
+    margin: 0 10px;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+/*================================================
+  3. SEÇÃO HOME
+================================================*/
+#home {
+    height: 100vh;
+    min-height: 700px;
+    background: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.7)), url('images/background-code.jpg') no-repeat center center/cover;
+}
+
+.home-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.home-content h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin: 20px 0;
+}
+
+.home-content p {
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+.home-img {
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 0 30px rgba(106, 90, 205, 0.5);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+/*================================================
+  4. SEÇÃO SOBRE
+================================================*/
+#sobre ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sobre li {
+    padding-bottom: 10px;
+}
+
+#sobre i {
+    color: var(--primary-color);
+    margin-right: 8px;
+}
+
+.bgPurple {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.bgPurple:hover{
+	border: 3px solid var(--primary-color);
+	color: var(--primary-color);
+    background: #000;
+}
+
+.bgYellow {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+}
+
+.bgYellow:hover{
+	border: 3px solid var(--secondary-color);
+	color: var(--secondary-color);
+    background: #000;
+}
+
+/*================================================
+  5. SEÇÃO PORTFÓLIO
+================================================*/
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 18, 18, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.portfolio-overlay h4, .portfolio-overlay p {
+    color: var(--text-light);
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.portfolio-overlay p {
+    transition-delay: 0.1s;
+}
+
+.portfolio-item:hover .portfolio-overlay h4,
+.portfolio-item:hover .portfolio-overlay p {
+    transform: translateY(0);
+}
+
+.btn-icon {
+    color: var(--text-light);
+    font-size: 2rem;
+    margin-top: 15px;
+}
+
+/*================================================
+  6. FOOTER
+================================================*/
+.footer-bg {
+    background-color: var(--bg-light);
+    padding: 30px 0;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}

@@ -1,0 +1,88 @@
+.form{
+    
+}
+.formField{
+    border: solid 2px var(--bg-dark);
+    background: var(--bg-light);
+    color: var(--text-light);
+    transition: 0.3s;
+    
+}
+.formFieldDados{
+    padding-left: 70px;
+    border-radius: 27px;
+}
+.textbox{
+    position: relative;
+    padding-left: 20px;
+}
+.textbox input::placeholder{
+    color: rgb(255 255 255 / 50%);
+}
+.textbox input:focus, .textbox input:valid{
+    padding-left: 20px;
+}
+.textbox input:focus ~ label, .textbox input:valid ~ label{
+    translate: 0 -34px;
+    scale: 0.825;
+    transition-duration: 0.3s;
+}
+.formField + label{
+    position: absolute;
+    display: grid;
+    place-items: center;
+    transform-origin: 0% 0%;
+    pointer-events: none;
+    top: 4px;
+    left: 4px;
+    height: 32px;
+    width: 80px;
+    border-radius: 27px;
+    background: var(--primary-color);
+}
+.info-box{
+    padding: 30px;
+    background: var(--bg-light);
+    border-radius: 10px;
+    height: 100%;
+}
+.info-box:hover > i{
+    color: var(--primary-color);
+}
+.info-box i{
+    font-size: 38px;
+    border-radius: 50%;
+}
+
+.social-links > div > a > i:hover{
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+.buttons{
+    height: 150px;
+}
+.buttonForm:nth-child(3){
+    width: 10%;
+    font-size: 20px;
+}
+.buttonForm{
+    height: 35px;
+    width: 51%;
+    border-radius: 10px;
+    color: white;
+    align-self: center;
+    border: none;
+    transition: 0.3s;
+}
+.buttonForm:hover{
+    cursor: pointer;
+    background: var(--bg-dark);
+}
+.buttonMessageBox{
+	background: var(--bg-light);
+    color: var(--text-light);
+}
+.buttonMessageBox:hover{
+	border: 3px solid var(--text-light);
+	color: var(--text-light);
+}
